@@ -1,0 +1,200 @@
+﻿@model BearsleePublicHouse.Models.GiftCard
+
+@{
+    ViewBag.Title = "Gift Cards";
+}
+
+<!-- Gift Cards - Title Row -->
+<div class="container-fluid" id="gift-cards">
+    <div class="row title-row parallax-window" data-parllax="scroll" data-image-src="../images/Story_Intro_Image.jpg">
+        <i class="fa fa-circle"></i>
+        <i class="fa fa-credit-card fa-4x"></i>
+        <i class="fa fa-circle"></i>
+    </div>
+</div>
+<!-- Gift Cards - Content -->
+<div class="container gift-cards wow fadeIn">
+
+    <form asp-action="Receipt" method="post" class="form-horizontal">
+
+        <input asp-for="UniqueIdentifier" type="hidden" />
+        <input asp-for="Amount" type="hidden" />
+        <input asp-for="Total" type="hidden" />
+
+        <input asp-for="Shipping.FirstName" type="hidden" />
+        <input asp-for="Shipping.LastName" type="hidden" />
+        <input asp-for="Shipping.Address" type="hidden" />
+        <input asp-for="Shipping.City" type="hidden" />
+        <input asp-for="Shipping.State" type="hidden" />
+        <input asp-for="Shipping.Postal" type="hidden" />
+        <input asp-for="Shipping.Phone" type="hidden" />
+        <input asp-for="Shipping.Email" type="hidden" />
+        <input asp-for="Shipping.Apt" type="hidden" />
+
+
+
+        <input asp-for="Billing.FirstName" type="hidden" />
+        <input asp-for="Billing.LastName" type="hidden" />
+        <input asp-for="Billing.Address" type="hidden" />
+        <input asp-for="Billing.City" type="hidden" />
+        <input asp-for="Billing.State" type="hidden" />
+        <input asp-for="Billing.Postal" type="hidden" />
+        <input asp-for="Billing.Phone" type="hidden" />
+        <input asp-for="Billing.Email" type="hidden" />
+        <input asp-for="Billing.Apt" type="hidden" />
+
+        <input asp-for="Information.GiftMsg" type="hidden" />
+        <input asp-for="Information.SpecialInstructions" type="hidden" />
+        <input asp-for="Information.ShippingType" type="hidden" />
+        <input asp-for="Information.ShippingDisplay" type="hidden" />
+        <input asp-for="Information.ShippingCost" type="hidden" />
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Order Summary</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="form-group">
+                        <strong>Ship to:</strong><br />
+                        @Model.Shipping.FirstName @Model.Shipping.LastName <br />
+                        @Model.Shipping.Address @Model.Shipping.Apt<br />
+                        @Model.Shipping.City, @Model.Shipping.State @Model.Shipping.Postal <br />
+                        @Model.Shipping.Phone <br />
+                        @Model.Shipping.Email <br />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="form-group">
+                        <strong>Bill to:</strong><br />
+                        @Model.Billing.FirstName @Model.Billing.LastName <br />
+                        @Model.Billing.Address @Model.Billing.Apt<br />
+                        @Model.Billing.City, @Model.Billing.State @Model.Billing.Postal <br />
+                        @Model.Billing.Phone <br />
+                        @Model.Billing.Email <br />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="form-group">
+                        <strong>Gift Card Info:</strong><br />
+                        Gift Message:<br />
+                        @Model.Information.GiftMsg <br />
+                        <br />
+                        Special Intructions:<br />
+                        @Model.Information.SpecialInstructions <br />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <strong>Order Total:</strong>
+                    <table class="table">
+                        <tr>
+                            <td style="border-top:none">
+                                Beardslee Public House Gift Card
+                            </td>
+                            <td class="text-right" style="border-top:none">
+                                @Model.Amount.Value.ToString("c")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-top:none">
+                                Shipping: <br />
+                                @Model.Information.ShippingDisplay
+                            </td>
+                            <td class="text-right" style="border-top:none">
+                                @Model.Information.ShippingCost.ToString("c")
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Total</strong>
+                            </td>
+                            <td class="text-right" >
+                                <strong>@Model.Total.Value.ToString("c")</strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Payment Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="cardType" class="col-xs-12 col-sm-2 control-label">Card Type*</label>
+                    <div class="col-sm-10">
+                        <select asp-for="Card.CardType" class="form-control">
+                            <option value="0">Select Card Type</option>
+                            <option value="Visa">Visa</option>
+                            <option value="Master Card">Master Card</option>
+                            <option value="Discover">Discover</option>
+                            <option value="American Express">American Express</option>
+                        </select>
+                        <span asp-validation-for="Card.CardType" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardNumber" class="col-xs-12 col-sm-2 control-label">Card Number*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Card.CardNumber" type="number" maxlength="20" class="form-control" placeholder="Card Number" />
+                        <span asp-validation-for="Card.CardNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="expiration" class="col-xs-12 col-sm-2 control-label">Expiration*</label>
+                    <div class="col-xs-6 col-sm-5">
+                        <select asp-for="Card.CardMonth" class="form-control">
+                            <option value="0">Month</option>
+                            <option value="1">January</option>
+                            <option value="2">Febuary</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <span asp-validation-for="Card.CardMonth" class="text-danger"></span>
+                    </div>
+                    <div class="col-xs-6 col-sm-5">
+                        <select asp-for="Card.CardYear" class="form-control">
+                            <option value="0">Year</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select>
+                        <span asp-validation-for="Card.CardYear" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-center">
+            
+            <input type="submit" name="toDo" value="Back" class="btn btn-default"/>
+            
+            <input type="submit" name="toDo" value="Purchase" class="btn btn-default" />
+        </div>
+
+    </form>
+
+
+
+
+
+</div>

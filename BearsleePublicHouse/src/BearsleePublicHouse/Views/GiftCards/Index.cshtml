@@ -1,0 +1,55 @@
+﻿@model BearsleePublicHouse.Models.GiftCard
+
+@{
+    ViewBag.Title = "Gift Cards";
+}
+
+<!-- Gift Cards - Title Row -->
+<div class="container-fluid" id="gift-cards">
+    <div class="row title-row parallax-window" data-parllax="scroll" data-image-src="../images/Story_Intro_Image.jpg">
+        <i class="fa fa-circle"></i>
+        <i class="fa fa-credit-card fa-4x"></i>
+        <i class="fa fa-circle"></i>
+    </div>
+</div>
+<!-- Gift Cards - Content -->
+<div class="container gift-cards wow fadeIn">
+    <div class="row">
+        <div class="col-xs-12 text-center">            
+
+            <p>Enter a gift card amount and select continue to purchase your gift card.</p>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">PURCHASE A GIFT CARD</h2>
+                </div>
+                <div class="panel-body">
+                    <form asp-action="Checkout" method="post">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                <input asp-for="Amount" class="form-control" type="text" placeholder="Amount" />
+                            </div>
+                            <span asp-validation-for="Amount" class="text-danger"></span>
+                        </div>
+                        <div class="text-right">
+                            <input type="submit" value="Continue" class="btn btn-default" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">DIGITAL GIFT CARDS</h2>
+                </div>
+                <div class="panel-body">
+                    Need a last-minute gift? Use our new digital gifting solution to treat friends to a glass of wine or a gift card with just a few clicks.
+                </div>
+                <p>
+                    <a href="https://plugins.gratafy.com/?plugin_id=2764" class="btn btn-default gratafy-widget-trigger inline">Order Now</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>

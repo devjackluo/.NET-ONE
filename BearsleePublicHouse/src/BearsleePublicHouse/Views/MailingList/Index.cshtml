@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Mailing List";
+}
+
+      <!-- Mailing List - Title Row -->
+<div class="container-fluid" id="mailing-list">
+    <div class="row title-row parallax-window" data-parllax="scroll" data-image-src="images/Company_Intro_Image.jpg">
+        <img class="img-responsive" src="images/EmailClub_floater.png" alt="Email Club" />
+    </div>
+</div>
+<!-- Mailing List - Content -->
+<div class="container mailing-list wow fadeIn">
+    <h1>Mailing List</h1>
+    <p class="lead">
+        Join the Beardslee Public House e-mail list! As a member of the Beardslee Public House e-mail list you’ll be the first to hear about special events and offers, menu changes and wine classes. Your information will not be shared or sold to any other party.
+    </p>
+    <form class="form-horizontal" method="post" action="http://www.aimtotell.net/mailer/form.php?form=18" id="frmSS18">
+        <div class="form-group">
+            <label for="firstName" class="col-xs-12 col-sm-3 control-label"> First Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="firstName" id="firstName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-xs-12 col-sm-3 control-label"> Last Name</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" name="lastName" id="lastName" />
+            </div>
+        </div>
+        <div class="form-group email-group">
+            <label for="emailAddress" class="col-xs-12 col-sm-3 control-label">Your Email Address*</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Email Address is required" name="emailAddress" id="emailAddress" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="preferredFormat" class="col-xs-12 col-sm-3 control-label">Preferred Format*</label>
+            <div class="col-sm-9">
+                <select class="form-control" name="preferredFormat" id="preferredFormat">
+                    <option value="h">HTML</option>
+                    <option value="t">Text</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthMonth" class="col-xs-12 col-sm-3 control-label">Birth Month</label>
+            <div class="col-sm-9">
+                <select class="form-control" name="birthMonth" id="birthMonth">
+                    <option value="00">None Selected</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthMonthSpouse" class="col-sm-12 col-sm-3 control-label">Spouse's Birth Month</label>
+            <div class="col-sm-9">
+                <select class="form-control" name="birthMonth" id="birthMonthSpouse">
+                    <option value="00">None Selected</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="anniversaryMonth" class="col-xs-12 col-sm-3 control-label">Anniversary Month</label>
+            <div class="col-sm-9">
+                <select class="form-control" name="anniversaryMonth" id="anniversaryMonth">
+                    <option value="00">None Selected</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-default" value="Subscribe">
+        </div>
+    </form>
+</div>
+

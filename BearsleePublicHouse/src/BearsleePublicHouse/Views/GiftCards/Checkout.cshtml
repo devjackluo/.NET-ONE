@@ -1,0 +1,369 @@
+﻿@model BearsleePublicHouse.Models.GiftCard
+
+@{
+    ViewBag.Title = "Gift Cards";
+}
+
+<!-- Gift Cards - Title Row -->
+<div class="container-fluid" id="gift-cards">
+    <div class="row title-row parallax-window" data-parllax="scroll" data-image-src="../images/Story_Intro_Image.jpg">
+        <i class="fa fa-circle"></i>
+        <i class="fa fa-credit-card fa-4x"></i>
+        <i class="fa fa-circle"></i>
+    </div>
+</div>
+<!-- Gift Cards - Content -->
+<div class="container gift-cards wow fadeIn">
+
+    <form asp-action="Preview" class="form-horizontal" method="post">
+
+
+        <input asp-for="UniqueIdentifier" type="hidden" />
+        <input asp-for="Amount" type="hidden" />
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Gift Cards Recipient / Shipping</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="shippingFirstName" class="col-sm-2 hidden-xs control-label">First Name*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.FirstName" type="text" class="form-control" placeholder="First Name" />
+                        <span asp-validation-for="Shipping.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingLastName" class="col-sm-2 hidden-xs control-label">Last Name*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.LastName" type="text" class="form-control" placeholder="Last Name" />
+                        <span asp-validation-for="Shipping.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingAddress" class="col-sm-2 hidden-xs control-label">Address*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.Address" type="text" class="form-control" placeholder="Address" />
+                        <span asp-validation-for="Shipping.Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingApt" class="col-sm-2 hidden-xs control-label">Apt/Ste</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.Apt" type="text" class="form-control" placeholder="Apt/Ste" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingCity" class="col-sm-2 hidden-xs control-label">City*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.City" type="text" class="form-control" placeholder="City" />
+                        <span asp-validation-for="Shipping.City" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingState" class="col-sm-2 hidden-xs control-label">State*</label>
+                    <div class="col-sm-10">
+                        <select asp-for="Shipping.State" class="form-control">
+                            <option value="0">Select</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <span asp-validation-for="Shipping.State" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="shippingPostal" class="col-sm-2 hidden-xs control-label">Postal Code*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.Postal" type="text" class="form-control" placeholder="Postal Code" />
+                        <span asp-validation-for="Shipping.Postal" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingPhone" class="col-sm-2 hidden-xs control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.Phone" type="text" class="form-control" placeholder="Phone" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="shippingEmail" class="col-sm-2 hidden-xs control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Shipping.Email" type="text" class="form-control" placeholder="Email" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Billing Information</h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2">
+                        <input type="checkbox" id="sameBilling" />Billing information is the same as shpping information
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="billingFirstName" class="col-sm-2 hidden-xs control-label">First Name*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.FirstName" type="text" class="form-control" placeholder="First Name" />
+                        <span asp-validation-for="Billing.FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingLastName" class="col-sm-2 hidden-xs control-label">Last Name*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.LastName" type="text" class="form-control" placeholder="Last Name" />
+                        <span asp-validation-for="Billing.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingAddress" class="col-sm-2 hidden-xs control-label">Address*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.Address" type="text" class="form-control" placeholder="Address" />
+                        <span asp-validation-for="Billing.Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingApt" class="col-sm-2 hidden-xs control-label">Apt/Ste</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.Apt" type="text" class="form-control" placeholder="Apt/Ste" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingCity" class="col-sm-2 hidden-xs control-label">City*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.City" type="text" class="form-control" placeholder="City" />
+                        <span asp-validation-for="Billing.City" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingState" class="col-sm-2 hidden-xs control-label">State*</label>
+                    <div class="col-sm-10">
+                        <select asp-for="Billing.State" class="form-control">
+                            <option value="0">Select</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <span asp-validation-for="Billing.State" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="billingPostal" class="col-sm-2 hidden-xs control-label">Postal Code*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.Postal" type="text" class="form-control" placeholder="Postal Code" />
+                        <span asp-validation-for="Billing.Postal" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingPhone" class="col-sm-2 hidden-xs control-label">Phone*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.Phone" type="text" class="form-control" placeholder="Phone" />
+                        <span asp-validation-for="Billing.Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="billingEmail" class="col-sm-2 hidden-xs control-label">Email*</label>
+                    <div class="col-sm-10">
+                        <input asp-for="Billing.Email" type="text" class="form-control" placeholder="Email" />
+                        <span asp-validation-for="Billing.Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Gift Cards Information</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="shippingType" class="col-sm-2 hidden-xs control-label">Shipping *</label>
+                    <div class="col-sm-10">
+                        <select asp-for="Information.ShippingType" class="form-control">
+                            <option value="0">Select Shipping</option>
+                            <option value="1">Pickup at Beardslee - $0.00</option>
+                            <option value="2">USPS Parcel Post - $0.00</option>
+                            <option value="3">USPS 2-3 Day Priority Mail - $8.00</option>
+                        </select>
+                        <span asp-validation-for="Information.ShippingType" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="giftMsg" class="col-sm-2 hidden-xs control-label">Gift Message</label>
+                    <div class="col-sm-10">
+                        <textarea asp-for="Information.GiftMsg" placeholder="Gift Message" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="specialIntruction" class="col-sm-2 hidden-xs control-label">Special Instructions</label>
+                    <div class="col-sm-10">
+                        <textarea asp-for="Information.SpecialInstructions" placeholder="Special Instructions" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-center">
+            <a>Privacy & Security</a>
+        </div>
+
+        <div class="text-center">
+
+            <input type="submit" name="toDo" value="Back" class="btn btn-default" />
+
+            <input type="submit" name="toDo" value="Continue" class="btn btn-default" />
+        </div>
+
+
+    </form>
+
+
+</div>
+
+
+<script>
+
+
+    $("#sameBilling").on('click', function () {
+
+        
+        if ($("input#sameBilling").is(':checked')) {
+
+            $("input#Billing_FirstName").val($("input#Shipping_FirstName").val());
+            $("input#Billing_LastName").val($("input#Shipping_LastName").val());
+            $("input#Billing_Address").val($("input#Shipping_Address").val());
+            $("input#Billing_Apt").val($("input#Shipping_Apt").val());
+            $("input#Billing_City").val($("input#Shipping_City").val());
+
+            $("select#Billing_State").val($("select#Shipping_State").val());
+
+            $("input#Billing_Postal").val($("input#Shipping_Postal").val());
+            $("input#Billing_Phone").val($("input#Shipping_Phone").val());
+            $("input#Billing_Email").val($("input#Shipping_Email").val());
+  
+        } else {
+
+            $("input#Billing_FirstName").val('');
+            $("input#Billing_LastName").val('');
+            $("input#Billing_Address").val('');
+            $("input#Billing_Apt").val('');
+            $("input#Billing_City").val('');
+
+            $("select#Billing_State").val('0');
+
+            $("input#Billing_Postal").val('');
+            $("input#Billing_Phone").val('');
+            $("input#Billing_Email").val('');
+        }            
+
+    });
+
+</script>

@@ -1,0 +1,500 @@
+﻿/* General */
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #fff;
+    padding-top: 10px;
+}
+
+h1 {
+    color: #251c10;
+}
+
+a {
+    color: #251c10;
+}
+
+    a:hover {
+        color: #f6830b;
+        text-decoration: none;
+    }
+
+
+/* Header navbar */
+.header-logo {
+    margin: 0;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.navbar {
+    background-image: url('../images/MenuBackground_Repeat.png');
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #251c10;
+    background-color: #fff;
+    min-height: 0;
+}
+
+    .navbar .navbar-header button.navbar-toggle {
+        background-color: #251c10;
+    }
+
+    .navbar .navbar-nav li a {
+        color: #8b7b62;
+    }
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    color: #f6830b;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+    color: #f6830b;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+}
+
+/* Nav-pills */
+ul.nav-pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-pills > li > a {
+    font-size: 20px;
+    color: #8b7b62;
+    background-color: transparent;
+}
+
+    .nav-pills > li > a:hover {
+        color: #f6830b;
+        background-color: transparent;
+    }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #f6830b;
+    background-color: transparent;
+}
+
+
+/* Title rows */
+.title-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+    .title-row img {
+        padding: 40px;
+        margin: 80px 40px;
+    }
+
+i.fa {
+    color: #fff;
+    padding: 20px;
+}
+
+/* Carousel */
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+
+/* Home */
+#home > div {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* What We Make */
+#explore-our-menus > div:nth-of-type(2) {
+    margin-top: 25px;
+}
+
+#explore-our-menus p.lead {
+    padding: 10px 25px 0 25px;
+}
+
+#year-round-offerings > div:nth-of-type(2) h2, #seasonal > div:nth-of-type(2) h2 {
+    color: #251c10;
+}
+
+#year-round-offerings > div:nth-of-type(2) p.lead, #seasonal > div:nth-of-type(2) p.lead {
+    padding-top: 10px;
+}
+
+#year-round-offerings > div:nth-of-type(2) img {
+    padding-top: 25px;
+}
+
+/* Who We Are */
+.who-we-are > div.row {
+    margin-top: 20px;
+}
+
+    .who-we-are > div.row:first-of-type {
+        margin-top: 20px;
+    }
+
+.who-we-are img {
+    padding-top: 25px;
+}
+
+.who-we-are a {
+    text-decoration: none;
+}
+
+.who-we-are h2 {
+    color: #251c10;
+}
+
+.who-we-are h3 {
+    color: #f6830b;
+}
+
+.who-we-are a i {
+    color: #251c10;
+    padding: 0;
+}
+
+.who-we-are a:hover i {
+    color: #8b7b62;
+}
+
+/* Why We Are */
+.why-we-are p.lead {
+    text-align: left;
+}
+
+#why-we-are-carousel {
+    margin: 10px auto 25px;
+    max-width: 960px;
+}
+
+
+
+/* What They Said */
+.what-they-said > div.row > div {
+    font-size: 18px;
+    line-height: 1.7em;
+    color: #251c10;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+    .what-they-said > div.row > div:last-of-type {
+        margin-bottom: 0;
+    }
+
+.what-they-said cite {
+    display: block;
+    font-size: 16px;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.what-they-said a {
+    color: #8b7b62;
+}
+
+    .what-they-said a:hover {
+        color: #f6830b;
+    }
+
+/* What You'll See */
+#what-youll-see div.title-row {
+    height: 380px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.what-youll-see h1 {
+    margin-bottom: 20px;
+}
+
+#food-carousel {
+    margin: 10px auto 25px;
+    max-width: 1000px;
+    width: 80%;
+}
+
+#architecture-carousel {
+    margin: 10px auto 25px;
+    max-width: 1500px;
+    width: 80%;
+}
+
+.what-youll-see > div.row > div > a > img {
+    margin-bottom: 20px;
+}
+
+.what-youll-see iframe {
+    width: 853px;
+    height: 480px;
+    margin-bottom: 20px;
+}
+
+/* Mailing List */
+.mailing-list h1 {
+    text-align: center;
+}
+
+/* Gift Cards */
+#gift-cards div.title-row {
+    height: 380px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.gift-cards a.btn {
+    background-color: #251c10;
+    border-color: #251c10;
+    color: white;
+    font-size: 1.6em;
+    padding: 10px 40px;
+    margin: 10px;
+}
+
+    .gift-cards a.btn:hover {
+        background-color: #f6830b;
+        border-color: #f6830b;
+    }
+
+
+.gift-cards .panel-default {
+    border-color: #251c10;
+}
+
+    .gift-cards .panel-default > .panel-heading {
+        color: #fff;
+        background-color: #251c10;
+    }
+
+.gift-cards .btn-default{
+
+    color: white;
+    background-color: #251c10;
+    border-color: #999;
+}
+
+
+.gift-cards .btn-default:hover{
+
+        background-color: #f6830b;
+        border-color: #f6830b;
+}
+
+
+.gift-cards .btn{
+
+    padding: 10px 40px;
+    font-size: 1.6em;
+    border: none;
+    margin: 10px;
+}
+
+.gift-cards .input-group-addon{
+
+    background-color: #251c10;
+    color: #fff;
+
+}
+
+
+.gift-cards .input-group .form-control {
+    border-color: #251c10;
+}
+
+
+/* Company info */
+#company-info {
+    background-image: url('../images/Content_Background.png');
+    padding-top: 250px;
+    padding-bottom: 75px;
+}
+
+    #company-info .home-links {
+        padding: 0 0 0 15px;
+    }
+
+/* Footer */
+.footer-logo {
+    margin-top: -125px;
+    position: relative;
+    z-index: 100;
+}
+
+footer {
+    background-color: #251c10;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 50px 0;
+}
+
+    footer .icons {
+        text-align: center;
+        border-bottom-color: #8b7b62;
+        margin-bottom: 10px;
+    }
+
+    footer hr {
+        width: 35%;
+        height: 1px;
+        border-top: 1px solid #8b7b62;
+    }
+
+    footer .text {
+        color: #8b7b62;
+        text-align: center;
+    }
+
+
+
+/* Icons */
+.facebook-icon {
+    margin-right: 20px;
+}
+
+.twitter-icon {
+    margin-right: 15px;
+}
+
+.facebook-icon, .twitter-icon, .pinterest-icon, .beer-menu, .drink-menu, .food-menu {
+    cursor: pointer;
+}
+
+
+
+/* Media queries */
+@media (max-width:767px) {
+    .header-logo {
+        width: 200px;
+        height: 95px;
+        margin: 0;
+    }
+
+    .navbar {
+        font-size: 16px;
+        padding: 10px 0 0;
+    }
+
+        .navbar .navbar-nav {
+            padding-top: 50px;
+        }
+
+    .navbar-fixed-top .navbar-collapse {
+        background-color: white;
+        max-height: 100%;
+    }
+
+    .nav-pills > li > a {
+        font-size: 16px;
+    }
+
+    .title-row img {
+        margin: 60px 40px;
+    }
+
+    #what-youll-see div.title-row, #gift-cards div.title-row {
+        height: 360px;
+    }
+
+    .who-we-are > div.row {
+        margin-top: 10px;
+    }
+
+        .who-we-are > div.row:first-of-type {
+            margin-top: 0;
+        }
+
+    .who-we-are h3 {
+        font-size: 20px;
+    }
+
+    .what-youll-see .nav-pills > li > a {
+        padding: 5px;
+    }
+}
+
+@media (min-width:768px) {
+    .header-logo {
+        margin-top: 10px;
+        width: 200px;
+        height: 125px;
+    }
+
+    .navbar {
+        font-size: 12px;
+        padding: 20px 0 0;
+    }
+
+        .navbar .navbar-nav {
+            padding-left: 200px;
+        }
+
+    .navbar-nav > li > a {
+        padding-left: 8px;
+        padding-right: 0;
+        padding-bottom: 7px;
+    }
+}
+
+@media (min-width:992px) {
+    .header-logo {
+        width: 250px;
+        height: 150px;
+    }
+
+    .navbar {
+        font-size: 16px;
+        padding: 35px 0 0;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+        .navbar .navbar-nav {
+            padding-left: 260px;
+        }
+
+    .navbar-nav > li > a {
+        padding-bottom: 15px;
+    }
+}
+
+@media (min-width:1200px) {
+    .navbar {
+        font-size: 16px;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    .navbar-nav > li > a {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 12px;
+    }
+}
+
+
